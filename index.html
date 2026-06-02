@@ -6,15 +6,15 @@
   <meta name="theme-color" content="#6d5efc" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Whatnot" />
+  <meta name="apple-mobile-web-app-title" content="Bulk Import" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <link rel="stylesheet" href="app.css" />
-  <title>Whatnot Uploader</title>
+  <title>Bulk Import Builder</title>
 </head>
 <body>
   <header class="topbar">
-    <div class="brand"><span class="mark">W</span> Whatnot Uploader</div>
+    <div class="brand"><span class="mark">B</span> Bulk Import Builder</div>
     <button id="gear" class="iconbtn" aria-label="Settings">⚙</button>
   </header>
 
@@ -24,7 +24,7 @@
       <div class="show-card">
         <label class="field">
           <span>Show name</span>
-          <input id="show-name" type="text" placeholder="e.g. Gillis Farm Sale 3" />
+          <input id="show-name" type="text" placeholder="Name this show" />
         </label>
         <label class="field small">
           <span>Item code letter <small>(e.g. A → A1, A2…)</small></span>
@@ -100,6 +100,7 @@
       <label class="field small"><span>Shipping profile</span><select id="def-shipping"></select></label>
       <p class="hint tiny">Category is fixed to <b>Antiques, Vintage &amp; Ephemera → Vintage Decor</b> (matches your shows). Edit in app.js if that ever changes.</p>
       <button id="settings-done" class="bigbtn sm">Done</button>
+      <p class="hint tiny" style="text-align:center;margin-top:16px">Not affiliated with, endorsed by, or sponsored by Whatnot, Inc. “Whatnot” is a trademark of its owner.</p>
     </div>
   </div>
 

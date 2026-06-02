@@ -1,5 +1,5 @@
 /*
-  Whatnot Uploader — image relay (Cloudflare Worker).
+  Bulk Import Builder — image relay (Cloudflare Worker).
 
   Phones can't upload to Catbox directly (the browser blocks it for security/CORS).
   This tiny worker receives a photo from the app and forwards it to Catbox, then

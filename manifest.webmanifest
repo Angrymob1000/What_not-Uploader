@@ -1,7 +1,7 @@
 {
-  "name": "Whatnot Uploader",
-  "short_name": "Whatnot",
-  "description": "Build a Whatnot bulk-import CSV from your phone photos.",
+  "name": "Bulk Import Builder",
+  "short_name": "Bulk Import",
+  "description": "Build a bulk-import CSV for Whatnot from your phone photos. Not affiliated with Whatnot, Inc.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

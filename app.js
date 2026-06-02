@@ -1,7 +1,7 @@
 'use strict';
 
 /* ============================================================================
-   Whatnot Uploader — iPhone PWA
+   Bulk Import Builder — iPhone PWA (a bulk-import CSV builder for Whatnot)
    Build a Whatnot bulk-import CSV entirely on the phone:
    pick photos -> auto-group by capture time -> edit -> upload -> CSV.
    CSV columns + defaults mirror the desktop tool exactly.

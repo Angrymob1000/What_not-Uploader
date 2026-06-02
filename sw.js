@@ -1,6 +1,6 @@
 // Simple offline-shell service worker. Caches the app files + CDN libs so the app
 // opens even with no signal. Bump CACHE to force an update after editing files.
-const CACHE = 'whatnot-pwa-v1';
+const CACHE = 'bulk-import-builder-v2';
 const ASSETS = [
   './',
   './index.html',

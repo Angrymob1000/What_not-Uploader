@@ -1,4 +1,7 @@
-# Whatnot Uploader — iPhone app (PWA)
+# Bulk Import Builder — iPhone app (PWA)
+
+*A bulk-import CSV builder for Whatnot. Not affiliated with, endorsed by, or sponsored by
+Whatnot, Inc. "Whatnot" is a trademark of its owner.*
 
 A phone version of the desktop tool. Pick your show photos, it auto-groups them into
 items by capture time, you type titles/prices, and it builds the **exact same
@@ -28,7 +31,7 @@ at an `https://` address. Easiest free way:
 ## B. Add it to your iPhone home screen
 1. Open the link above in **Safari** on your iPhone.
 2. Tap the **Share** button → **Add to Home Screen** → **Add**.
-3. You now have a **Whatnot Uploader** icon, opens full-screen like a real app.
+3. You now have a **Bulk Import** icon, opens full-screen like a real app.
 
 ## C. Photo uploads — no setup needed
 Photos upload to a free temporary host (Litterbox) straight from the phone. The links last
