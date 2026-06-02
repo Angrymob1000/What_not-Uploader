@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <meta name="theme-color" content="#6d5efc" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Whatnot" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="stylesheet" href="app.css" />
+  <title>Whatnot Uploader</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="mark">W</span> Whatnot Uploader</div>
+    <button id="gear" class="iconbtn" aria-label="Settings">⚙</button>
+  </header>
+
+  <main class="content">
+    <!-- PHOTOS -->
+    <section class="view active" id="view-photos">
+      <div class="show-card">
+        <label class="field">
+          <span>Show name</span>
+          <input id="show-name" type="text" placeholder="e.g. Gillis Farm Sale 3" />
+        </label>
+        <label class="field small">
+          <span>Item code letter <small>(e.g. A → A1, A2…)</small></span>
+          <input id="show-letter" type="text" maxlength="3" placeholder="A" />
+        </label>
+      </div>
+
+      <button id="pick" class="bigbtn">＋ Add photos from your phone</button>
+      <input id="file" type="file" accept="image/*" multiple hidden />
+
+      <label class="gap-row">
+        New item when shots are more than
+        <input id="gap" type="number" min="1" value="35" /> seconds apart.
+      </label>
+
+      <p class="hint" id="photos-hint">Pick the show's photos. They'll be sorted by the time each was taken and grouped into items automatically — you can fix the grouping on the Items tab.</p>
+      <div id="pick-status" class="status"></div>
+    </section>
+
+    <!-- ITEMS -->
+    <section class="view" id="view-items">
+      <div class="items-head">
+        <h2 id="items-count">No items yet</h2>
+        <div class="bulk" id="bulk-bar"></div>
+      </div>
+      <div id="items"></div>
+      <p class="hint" id="items-empty">Add photos on the Photos tab first.</p>
+    </section>
+
+    <!-- EXPORT -->
+    <section class="view" id="view-export">
+      <h2>Export to Whatnot</h2>
+      <ol class="export-steps">
+        <li>
+          <b>Upload photos</b> to get public links Whatnot can use.
+          <button id="upload" class="bigbtn sm">Upload photos</button>
+          <div id="upload-status" class="status"></div>
+        </li>
+        <li>
+          <b>Get your CSV</b> and open it in the Whatnot app's bulk import.
+          <button id="build" class="bigbtn sm">Build &amp; share CSV</button>
+          <div id="build-status" class="status"></div>
+        </li>
+      </ol>
+      <p class="hint">In the Whatnot app: Seller tools → Bulk import → choose this CSV.</p>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button class="tab active" data-view="photos"><span>▦</span>Photos</button>
+    <button class="tab" data-view="items"><span>☰</span>Items</button>
+    <button class="tab" data-view="export"><span>⤓</span>Export</button>
+  </nav>
+
+  <!-- SETTINGS SHEET -->
+  <div id="settings" class="sheet">
+    <div class="sheet-card">
+      <div class="sheet-head"><h3>Settings</h3><button id="gear-close" class="iconbtn">✕</button></div>
+
+      <label class="field">
+        <span>Image upload link <small>(one-time setup — see below)</small></span>
+        <input id="endpoint" type="url" placeholder="https://your-worker.workers.dev" />
+      </label>
+      <p class="hint tiny">Phones can't upload to the photo host directly, so the app sends photos through your own free relay. Setup takes ~5 min — tap “How to set this up”.</p>
+      <button id="help-toggle" class="linkbtn">How to set this up ▾</button>
+      <div id="help" class="help hidden"></div>
+
+      <hr/>
+      <h4>Defaults for new items</h4>
+      <label class="field small"><span>Price</span><input id="def-price" type="text" inputmode="decimal" placeholder="e.g. 5" /></label>
+      <label class="field small"><span>Type</span><select id="def-type"><option>Buy it Now</option><option>Auction</option></select></label>
+      <label class="field small"><span>Condition</span><select id="def-condition"></select></label>
+      <label class="field small"><span>Shipping profile</span><select id="def-shipping"></select></label>
+      <p class="hint tiny">Category is fixed to <b>Antiques, Vintage &amp; Ephemera → Vintage Decor</b> (matches your shows). Edit in app.js if that ever changes.</p>
+      <button id="settings-done" class="bigbtn sm">Done</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/full.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
